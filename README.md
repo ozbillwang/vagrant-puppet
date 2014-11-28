@@ -7,6 +7,9 @@ Vagrant with puppet provision
 2. clone the repository (https://github.com/ozbillwang/vagrant-puppet.git)
 3. cd vagrant-puppet
 4. clone completed example24 modules (https://github.com/example42/puppet-modules.git)
+
+    git clone --recursive git://github.com/example42/puppet-modules.git
+
 5. mv puppet-modules modules
 6. vagrant up www
 7. vagrant ssh www
