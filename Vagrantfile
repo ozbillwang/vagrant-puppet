@@ -8,7 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :puppet do |puppet|
     puppet.module_path = "modules"
     puppet.manifests_path = "manifests"
-    puppet.manifest_file  = "vagrant-nodes.pp"
+    puppet.manifest_file  = "vagrant.pp"
     puppet.options = ['--verbose']
   end
   
