@@ -12,5 +12,18 @@ then
     wget -q http://apt.puppetlabs.com/$DEB
     sudo dpkg -i $DEB
 fi
-sudo apt-get update
-sudo apt-get install --yes puppet
+
+#sudo apt-get update
+#sudo apt-get install --yes puppet
+
+version=$(puppet --version)
+case "${version}" in
+     3* )
+                echo "Puppet version 3.X already"
+                ;;
+     * )
+                echo "Need install Puppet 3.X"
+                sudo apt-get update
+                sudo apt-get install --yes puppet
+                ;;
+esac

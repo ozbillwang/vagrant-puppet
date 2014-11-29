@@ -1,9 +1,12 @@
+node default {
+  include '::ntp'
+}
 node 'www' {
-#  include apache
-  include kibana
+  include apache
 }
 
 node 'logstash' {
+   include kibana
    include logstash
 }
 
