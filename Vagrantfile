@@ -40,17 +40,38 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :www do |config|
      config.vm.box = "precise64"
-     config.vm.host_name = "www.example.dev"
+     config.vm.host_name = "www.example.com"
      config.vm.network :private_network, ip: "192.168.50.50"
      config.vm.provision :puppet do |puppet|
        puppet.module_path = "modules"
        puppet.manifests_path = "manifests"
        puppet.manifest_file  = "vagrant.pp"
        puppet.options = ['--verbose']
-    end
+     end
   end
-  
+
+  config.vm.define :logstash do |config|
+     config.vm.box = "precise64"
+     config.vm.host_name = "logstash.example.com"
+     config.vm.network :private_network, ip: "192.168.50.52"
+     config.vm.provision :puppet do |puppet|
+       puppet.module_path = "modules"
+       puppet.manifests_path = "manifests"
+       puppet.manifest_file  = "vagrant.pp"
+       puppet.options = ['--verbose']
+     end
+  end  
+
+  config.vm.define :elasticsearch do |config|
+     config.vm.box = "precise64"
+     config.vm.host_name = "elasticsearch.example.com"
+     config.vm.network :private_network, ip: "192.168.50.54"
+     config.vm.provision :puppet do |puppet|
+       puppet.module_path = "modules"
+       puppet.manifests_path = "manifests"
+       puppet.manifest_file  = "vagrant.pp"
+       puppet.options = ['--verbose']
+     end
+  end
+
 end
-
-
-

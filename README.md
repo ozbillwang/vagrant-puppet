@@ -17,4 +17,4 @@ Vagrant with puppet provision
 6. vagrant up www
 7. vagrant ssh www
 
-That's all. You can access the website now http://192.168.50.50
+That's all. You can access the website now, url is http://192.168.50.50
