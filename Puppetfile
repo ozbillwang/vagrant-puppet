@@ -9,3 +9,4 @@ mod 'elasticsearch-elasticsearch'
 mod 'evenup-kibana'
 mod 'puppet-logstashforwarder',
   :git => "git://github.com/elasticsearch/puppet-logstashforwarder.git"
+mod 'puppetlabs-haproxy'

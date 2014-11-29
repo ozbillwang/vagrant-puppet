@@ -11,6 +11,7 @@ node 'logstash' {
   include basenode
   include kibana
   include logstash
+  include haproxy
 }
 
 node 'elasticsearch' {
