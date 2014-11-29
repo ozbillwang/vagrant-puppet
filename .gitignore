@@ -6,5 +6,5 @@
 /results/
 /build/
 *.sublime-workspace
-~$*.old
-~$*.lock
+*.old
+*.lock
