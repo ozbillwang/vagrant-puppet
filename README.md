@@ -3,18 +3,28 @@ vagrant-puppet
 
 Vagrant with puppet provision
 
-1. install Vagrant (https://docs.vagrantup.com/v2/installation/)
-2. clone the repository 
-
-    git clone https://github.com/ozbillwang/vagrant-puppet.git
-
-3. cd vagrant-puppet
-4. clone completed example24 modules (https://github.com/example42/puppet-modules.git)
-
-    git clone --recursive git://github.com/example42/puppet-modules.git
-
-5. mv puppet-modules modules
-6. vagrant up www
-7. vagrant ssh www
+* install Vagrant and librarian-puppet, on Mac, you need install bundler
+```
+Vagrant (https://docs.vagrantup.com/v2/installation/) 
+librarian-puppet (https://github.com/rodjek/librarian-puppet) - Librarian-puppet manages your modules/ directory for you based on your Puppetfile
+bundler (http://bundler.io/bundle_install.html) - Make sure all dependencies in your Gemfile are available to your application.
+```
+* clone the repository 
+```
+git clone https://github.com/ozbillwang/vagrant-puppet.git
+```
+* cd vagrant-puppet
+* bundle install  
+* librarian-puppet install
+* vagrant up www
+* vagrant ssh www
 
 That's all. You can access the website now, url is http://192.168.50.50
+
+Test logstash-elasticsearch-kibana
+* vagrant up logstash
+* vagrant up elasticsearch
+* Vagrant ssh logstash
+* vagrant ssh elasticsearch
+
+
